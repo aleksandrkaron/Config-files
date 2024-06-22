@@ -1,0 +1,35 @@
+Key remappings for my Realforce JIS keyboard.
+
+Tool used to scan the keys (on Arch Linux) :
+xorg-xev
+
+Simply run the command "xev" to launch the tool.
+
+Here's the code for each key on the last row of my keyboard :
+
+Left Ctrl : 37
+Super (Windows key) : 133
+Left Alt : 64
+Muhenkan (無変換) : 102
+Space : 65
+Henkan (変換) : 100
+Kana (カタカナ) : 101
+Alt Gr : 108
+Fn : (No mapping)
+Right Ctrl : 105
+
+For remapping the keys, I used the tool xmodmap. On Arch Linux, it's known as : 
+xorg-xmodmap
+
+To get a list of the possible keys you can use for your remap, just just the command "xmodmap -pk".
+
+Here's the remapping I did on my keyboard :
+
+1. Muhenkan to Super key :
+xmodmap -e "keycode 102 = Super_L"
+
+2. Henkan to Alt Gr : 
+xmodmap -e "keycode 100 = ISO_Level3_Shift"
+
+For now, the Kana key hasn't been remapped as I find no utility to it. 
+On my config, the Caps Lock has also been remapped to Ctrl for ease to use with Emacs (see other config file).
